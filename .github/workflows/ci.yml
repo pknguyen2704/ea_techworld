@@ -27,29 +27,6 @@ jobs:
     - name: Configure Docker for GCR
       run: gcloud auth configure-docker gcr.io
 
-    - name: Set up PHP 7.4 with Composer
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: 7.4
-        extensions: intl, xsl, zip, bcmath, soap, sockets, pdo_mysql, gd
-        tools: composer
-
-    - name: Install Magento dependencies via Composer
-      working-directory: ./src/magento
-      run: |
-        rm -rf vendor generated
-        composer install --no-dev --optimize-autoloader --prefer-dist
-
-    - name: Magento production build
-      working-directory: ./src/magento
-      run: |
-        php bin/magento setup:upgrade
-        php bin/magento setup:di:compile
-        php bin/magento setup:static-content:deploy -f en_US vi_VN
-        php bin/magento cache:clean
-        php bin/magento cache:flush
-        chmod -R 777 var generated pub/static pub/media
-
     - name: Copy Magento source to Docker build context
       run: |
         rm -rf ./docker/php7.4-fpm/magento
