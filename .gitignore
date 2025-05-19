@@ -1,2 +1,3 @@
 data
 .terraform
+src/magento/pub/static/

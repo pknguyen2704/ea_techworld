@@ -1,4 +1,4 @@
-name: CI Build & Push Magento
+name: CI Build & Push Magento Production
 
 on:
   push:
@@ -8,29 +8,58 @@ env:
   PROJECT_ID: enterprise-452702
   IMAGE_NAME: techworld-magento
   IMAGE_TAG: latest
-  REGION: asia-southeast1
   REGISTRY: gcr.io
+  REGION: asia-southeast1
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout source code
+    - name: 📦 Checkout source code
       uses: actions/checkout@v3
 
-    - name: Authenticate to Google Cloud
+    - name: 🔐 Authenticate to Google Cloud
       uses: google-github-actions/auth@v2
       with:
         credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
-    - name: Configure Docker for GCR
+    - name: 🐳 Configure Docker to use GCR
       run: gcloud auth configure-docker gcr.io
 
-    - name: Build Docker image
-      run: |
-        docker build -t $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG ./docker/php7.4-fpm
+    - name: ⚙️ Set up PHP 7.4
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 7.4
+        extensions: intl, xsl, zip, bcmath, soap, sockets, pdo_mysql, gd
+        tools: composer
 
-    - name: Push Docker image
+    - name: 🧰 Install Composer dependencies
+      working-directory: ./src/magento
       run: |
-        docker push $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG
+        composer install --no-dev --optimize-autoloader --prefer-dist
+
+    - name: ⚙️ Magento Build (setup:upgrade + static-content)
+      working-directory: ./src/magento
+      run: |
+        php bin/magento setup:upgrade
+        php bin/magento setup:di:compile
+        php bin/magento setup:static-content:deploy -f en_US vi_VN
+        php bin/magento cache:flush
+        find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
+        find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+        chown -R www-data:www-data .
+
+    - name: 🧱 Copy build into Docker context
+      run: |
+        rm -rf ./docker/php7.4-fpm/magento
+        cp -r ./src/magento ./docker/php7.4-fpm/magento
+
+    - name: 🏗️ Build Magento Docker image
+      run: |
+        docker build \
+          -t $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG \
+          ./docker/php7.4-fpm
+
+    - name: 📤 Push image to GCR
+      run: docker push $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG
