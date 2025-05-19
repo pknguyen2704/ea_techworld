@@ -37,6 +37,8 @@ jobs:
     - name: 🧰 Install Composer dependencies
       working-directory: ./src/magento
       run: |
+        rm -rf vendor generated
+        composer clear-cache
         composer install --no-dev --optimize-autoloader --prefer-dist
 
     - name: ⚙️ Magento Build (setup:upgrade + static-content)
@@ -45,10 +47,8 @@ jobs:
         php bin/magento setup:upgrade
         php bin/magento setup:di:compile
         php bin/magento setup:static-content:deploy -f en_US vi_VN
+        php bin/magento cache:clean
         php bin/magento cache:flush
-        find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
-        find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-        chown -R www-data:www-data .
 
     - name: 🧱 Copy build into Docker context
       run: |
