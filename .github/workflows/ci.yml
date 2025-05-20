@@ -1,4 +1,4 @@
-name: CI/CD Build & Deploy Magento to GKE (No ArgoCD)
+name: CI/CD Build & Deploy Magento to GKE (Dynamic Tag)
 
 on:
   push:
@@ -9,7 +9,6 @@ env:
   CLUSTER_NAME: techworld-cluster
   REGION: asia-southeast1
   IMAGE_NAME: techworld-magento
-  IMAGE_TAG: latest
   REGISTRY: gcr.io
 
 jobs:
@@ -20,6 +19,9 @@ jobs:
     - name: 📄 Checkout source code
       uses: actions/checkout@v3
 
+    - name: 🏷️ Set IMAGE_TAG from commit SHA
+      run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
     - name: 🔑 Authenticate to Google Cloud
       uses: google-github-actions/auth@v2
       with:
@@ -27,6 +29,7 @@ jobs:
 
     - name: 🛠 Configure Docker for GCR
       run: gcloud auth configure-docker gcr.io
+
     - name: 🕹️ Get GKE credentials
       uses: google-github-actions/get-gke-credentials@v2
       with:
@@ -34,13 +37,17 @@ jobs:
         location: ${{ env.REGION }}
         project_id: ${{ env.PROJECT_ID }}
 
-    - name: 🔧 Build & Push Docker image
+    - name: 🏗️ Build & Push Docker image
       run: |
         docker build -t $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG ./docker/php7.4-fpm
         docker push $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG
 
-    - name: 🛡 Deploy to GKE
+    - name: 🛠️ Update deployment.yaml with new image tag
+      run: |
+        sed -i "s|image: gcr.io/.*/$IMAGE_NAME:.*|image: gcr.io/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG|g" k8s/manifests/deployment.yaml
+        echo "Updated deployment.yaml with tag $IMAGE_TAG"
+
+    - name: 🚀 Deploy to GKE
       run: |
         kubectl apply -f k8s/manifests/
-        kubectl rollout restart deployment magento-app
         kubectl rollout status deployment magento-app

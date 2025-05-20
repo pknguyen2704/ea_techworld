@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: magento
-          image: gcr.io/enterprise-452702/techworld-magento:latest
+          image: gcr.io/enterprise-452702/techworld-magento:<something>
           ports:
             - containerPort: 9000
 
