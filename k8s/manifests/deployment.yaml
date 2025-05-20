@@ -1,5 +1,6 @@
-# Đơn giản hóa nhất có thể để triển khai Magento lên GKE
+# Đơn giản hóa nhất có thể để triển khai Magento lên GKE (hoàn chỉnh)
 
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: magento
-          image: gcr.io/enterprise-452702/techworld-magento:<something>
+          image: gcr.io/enterprise-452702/techworld-magento:latest
           ports:
             - containerPort: 9000
 
@@ -54,6 +55,14 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: magento.conf
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: magento-nginx-conf
 
 ---
 apiVersion: v1
