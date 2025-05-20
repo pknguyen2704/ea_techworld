@@ -33,11 +33,5 @@ RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php && \
 # COPY ./src/magento /var/www/html
 WORKDIR /var/www/html
 
-RUN php bin/magento setup:upgrade && \
-    php bin/magento setup:di:compile && \
-    php bin/magento setup:static-content:deploy -f en_US vi_VN && \
-    php bin/magento cache:flush && \
-    php bin/magento indexer:reindex
-
 EXPOSE 9000
 CMD ["php-fpm"]
