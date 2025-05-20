@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends \
     && rm -r /var/lib/apt/lists/*
 
+    
 # Giữ nguyên phần cấu hình và cài đặt PHP extensions
 RUN docker-php-ext-configure gd --with-jpeg --with-freetype \
     && docker-php-ext-install -j$(nproc) gd
