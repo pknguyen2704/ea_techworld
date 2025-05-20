@@ -30,7 +30,7 @@ RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php && \
     php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm /tmp/composer-setup.php
 
-COPY ./src/magento /var/www/html
+# COPY ./src/magento /var/www/html
 WORKDIR /var/www/html
 
 RUN php bin/magento setup:upgrade && \
