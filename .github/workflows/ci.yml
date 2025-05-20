@@ -45,3 +45,9 @@ jobs:
         kubectl apply -f k8s/manifests/
         kubectl rollout restart deployment magento-app
         kubectl rollout status deployment magento-app
+    - name: 🔐 Get GKE credentials
+      uses: google-github-actions/get-gke-credentials@v2
+      with:
+        cluster_name: techworld-cluster
+        location: asia-southeast1
+        project_id: ${{ env.PROJECT_ID }}
