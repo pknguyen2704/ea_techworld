@@ -334,7 +334,6 @@ return [
         'Modules_Weather' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
-        'Space48_SSO' => 1,
         'Temando_ShippingRemover' => 1,
         'Vnpayment_VNPAY' => 1
     ]

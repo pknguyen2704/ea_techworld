@@ -1,57 +1,106 @@
 provider "google" {
   credentials = file("/Users/andrew/Dev/EnterpriseApp/enterprise-452702-9a94ea6202ce.json")
-  project = "enterprise-452702"
+  project     = "enterprise-452702"
   region      = "asia-southeast1"
   zone        = "asia-southeast1-a"
 }
-resource "google_compute_network" "vpc" {
-  name                    = "techworld-vpc"
-  auto_create_subnetworks = false
-}
 
-resource "google_compute_subnetwork" "subnet" {
-  name          = "techworld-subnet"
-  ip_cidr_range = "10.10.0.0/16"
-  region        = "asia-southeast1"
-  network       = google_compute_network.vpc.id
+resource "google_container_cluster" "techworld" {
+  name                     = "techworld-cluster"
+  location                 = "asia-southeast1-a"
+  remove_default_node_pool = true
+  initial_node_count       = 1
 
-  secondary_ip_range {
-    range_name    = "pods"
-    ip_cidr_range = "10.20.0.0/16"
+  release_channel {
+    channel = "REGULAR"
   }
 
-  secondary_ip_range {
-    range_name    = "services"
-    ip_cidr_range = "10.30.0.0/20"
+  logging_service    = "logging.googleapis.com/kubernetes"
+  monitoring_service = "monitoring.googleapis.com/kubernetes"
+
+  networking_mode    = "VPC_NATIVE"
+  network            = "default"
+  subnetwork         = "default"
+
+  ip_allocation_policy {}
+
+  enable_shielded_nodes = true
+  enable_legacy_abac    = false
+  enable_binary_authorization = false
+
+  vertical_pod_autoscaling {
+    enabled = true
   }
-}
 
-module "gke" {
-  source     = "terraform-google-modules/kubernetes-engine/google"
-  version    = "~> 30.0"
-
-  project_id = "enterprise-452702"
-  name       = "techworld-cluster"
-  region     = "asia-southeast1"     # 👉 Bổ sung dòng này
-  zones      = ["asia-southeast1-a"]
-
-
-  network    = google_compute_network.vpc.name
-  subnetwork = google_compute_subnetwork.subnet.name
-
-  ip_range_pods     = "pods"         # 👉 Tên của secondary range
-  ip_range_services = "services"     # 👉 Tên của secondary range
-
-  node_pools = [
-    {
-      name         = "default-node-pool"
-      machine_type = "e2-medium"
-      min_count    = 3
-      max_count    = 3
-      disk_size_gb = 100
-      auto_upgrade = true
-      auto_repair  = true
-      preemptible  = false
+  addons_config {
+    http_load_balancing {
+      disabled = false
     }
-  ]
+  }
+
+  node_config {
+    machine_type = "e2-medium"
+    disk_size_gb = 30                       
+    image_type   = "UBUNTU_CONTAINERD"     
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ]
+
+    shielded_instance_config {
+      enable_secure_boot          = true
+      enable_integrity_monitoring = true
+    }
+
+    metadata = {
+      disable-legacy-endpoints = "true"
+    }
+
+    labels = {
+      env = "prod"
+    }
+
+    tags = ["gke-node"]
+  }
+}
+
+resource "google_container_node_pool" "default_nodes" {
+  name     = "default-node-pool"
+  cluster  = google_container_cluster.techworld.name
+  location = google_container_cluster.techworld.location
+
+  node_count = 3
+
+  node_config {
+    machine_type = "e2-medium"
+    disk_size_gb = 30                      
+    image_type   = "UBUNTU_CONTAINERD"    
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ]
+
+    shielded_instance_config {
+      enable_secure_boot          = true
+      enable_integrity_monitoring = true
+    }
+
+    metadata = {
+      disable-legacy-endpoints = "true"
+    }
+
+    labels = {
+      env = "prod"
+    }
+
+    tags = ["gke-node"]
+  }
+
+  management {
+    auto_upgrade = true
+    auto_repair  = true
+  }
+
+  autoscaling {
+    min_node_count = 3
+    max_node_count = 3
+  }
 }

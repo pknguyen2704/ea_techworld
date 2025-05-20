@@ -17,10 +17,9 @@
     },
     "version": "2.4.5",
     "require": {
-        "magento/composer-dependency-version-audit-plugin": "~0.1",
-        "magento/composer-root-update-plugin": "~2.0",
         "magento/product-community-edition": "2.4.5",
-        "space48/magento2-sso": "^1.1"
+        "magento/composer-root-update-plugin": "~2.0",
+        "magento/composer-dependency-version-audit-plugin": "~0.1"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -83,3 +82,4 @@
         "magento-force": "override"
     }
 }
+

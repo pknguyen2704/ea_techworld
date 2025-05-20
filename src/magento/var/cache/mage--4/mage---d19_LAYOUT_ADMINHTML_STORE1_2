@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1747479103;s:6:"expire";i:1779015103;s:4:"tags";s:37:"d19_LAYOUT_GENERAL_CACHE_TAG,d19_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1747757178;s:6:"expire";i:1779293178;s:4:"tags";s:37:"d19_LAYOUT_GENERAL_CACHE_TAG,d19_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="adminhtml_dashboard_index"><body>
    <referenceContainer name="content">
@@ -8140,15 +8140,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1747479103;s:6:"expire";i:1779015103;s:4:"t
          <argument name="template" xsi:type="string">Magento_Vault::form/vault.phtml</argument>
       </action>
    </referenceBlock>
-</body>
-</handle><handle id="adminhtml_auth_login"><body>
-   <referenceContainer name="login.content">
-      <block class="Magento\Backend\Block\Template" name="space48_sso_auth_login_buttons" template="Space48_SSO::login/buttons.phtml" after="admin.login">
-         <arguments>
-            <argument name="login_view_model" xsi:type="object">Space48\SSO\ViewModel\Adminhtml\Login</argument>
-         </arguments>
-      </block>
-   </referenceContainer>
 </body>
 </handle><handle id="default"><head>
    <meta name="robots" content="NOINDEX,NOFOLLOW"/>

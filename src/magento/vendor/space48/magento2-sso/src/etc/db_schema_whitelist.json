@@ -1,7 +1,0 @@
-{
-  "admin_user": {
-    "column": {
-      "is_sso": true
-    }
-  }
-}
