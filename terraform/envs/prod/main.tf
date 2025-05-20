@@ -24,10 +24,6 @@ resource "google_container_cluster" "techworld" {
 
   ip_allocation_policy {}
 
-  enable_shielded_nodes = true
-  enable_legacy_abac    = false
-  enable_binary_authorization = false
-
   vertical_pod_autoscaling {
     enabled = true
   }
