@@ -27,12 +27,6 @@ jobs:
 
     - name: 🛠 Configure Docker for GCR
       run: gcloud auth configure-docker gcr.io
-
-    - name: 🔧 Build & Push Docker image
-      run: |
-        docker build -t $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG ./docker/php7.4-fpm
-        docker push $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG
-
     - name: 🕹️ Get GKE credentials
       uses: google-github-actions/get-gke-credentials@v2
       with:
@@ -40,14 +34,13 @@ jobs:
         location: ${{ env.REGION }}
         project_id: ${{ env.PROJECT_ID }}
 
+    - name: 🔧 Build & Push Docker image
+      run: |
+        docker build -t $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG ./docker/php7.4-fpm
+        docker push $REGISTRY/$PROJECT_ID/$IMAGE_NAME:$IMAGE_TAG
+
     - name: 🛡 Deploy to GKE
       run: |
         kubectl apply -f k8s/manifests/
         kubectl rollout restart deployment magento-app
         kubectl rollout status deployment magento-app
-    - name: 🔐 Get GKE credentials
-      uses: google-github-actions/get-gke-credentials@v2
-      with:
-        cluster_name: techworld-cluster
-        location: asia-southeast1
-        project_id: ${{ env.PROJECT_ID }}
