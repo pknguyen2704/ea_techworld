@@ -7,7 +7,7 @@ on:
 env:
   PROJECT_ID: enterprise-452702
   CLUSTER_NAME: techworld-cluster
-  REGION: asia-southeast1
+  LOCATION: asia-southeast1-a
   IMAGE_REGISTRY: gcr.io
   IMAGE_TAG: latest
   IMAGE_NAME_APP: techworld-magento
@@ -33,7 +33,7 @@ jobs:
       uses: google-github-actions/get-gke-credentials@v2
       with:
         cluster_name: ${{ env.CLUSTER_NAME }}
-        location: ${{ env.REGION }}
+        location: ${{ env.LOCATION}}
         project_id: ${{ env.PROJECT_ID }}
 
     - name: Build & Push Magento app image
