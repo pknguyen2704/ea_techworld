@@ -30,33 +30,14 @@ RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php && \
     php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     rm /tmp/composer-setup.php
 
-# Set working directory - Chuẩn hóa thành /var/www/html
+COPY ./src/magento /var/www/html
 WORKDIR /var/www/html
 
-# --- PHẦN CẦN XÓA HOẶC COMMENT OUT ---
-# # Copy Magento source code - SẼ THỰC HIỆN TRONG PIPELINE CI/CD
-# COPY ../../src/magento/ /var/www/html/
+RUN php bin/magento setup:upgrade && \
+    php bin/magento setup:di:compile && \
+    php bin/magento setup:static-content:deploy -f en_US vi_VN && \
+    php bin/magento cache:flush && \
+    php bin/magento indexer:reindex
 
-# # Install Composer dependencies - SẼ THỰC HIỆN TRONG PIPELINE CI/CD
-# # COPY ../../src/magento/composer.json /var/www/html/composer.json
-# # COPY ../../src/magento/composer.lock /var/www/html/composer.lock
-# # COPY ../../src/magento/auth.json.sample /var/www/html/auth.json # Cấu hình auth.json nếu cần cho private repo
-# # RUN composer install --no-dev --optimize-autoloader --prefer-dist
-
-# # Set permissions - SẼ THỰC HIỆN TRONG PIPELINE CI/CD (hoặc entrypoint)
-# # RUN chown -R www-data:www-data /var/www/html
-# # RUN find /var/www/html -type d -exec chmod 770 {} \; && \
-# #     find /var/www/html -type f -exec chmod 660 {} \; && \
-# #     chmod +x /var/www/html/bin/magento
-
-# # Magento build commands - SẼ THỰC HIỆN TRONG PIPELINE CI/CD
-# # RUN php bin/magento setup:upgrade && \
-# #     php bin/magento setup:di:compile && \
-# #     php bin/magento setup:static-content:deploy -f en_US vi_VN && \
-# #     php bin/magento cache:flush && \
-# #     php bin/magento indexer:reindex
-# --- KẾT THÚC PHẦN XÓA/COMMENT ---
-
-# Giữ nguyên Expose port và CMD
 EXPOSE 9000
 CMD ["php-fpm"]
