@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1747757154;s:6:"expire";i:1747843554;s:4:"tags";s:33:"d19_CAT_P,d19_BLOCK_HTML,d19_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1747808015;s:6:"expire";i:1747894415;s:4:"tags";s:33:"d19_CAT_P,d19_BLOCK_HTML,d19_MAGE";}
 
     <div style="margin-bottom: 0;" class="owl-button-top above-padding below-padding block widget block-new-products grid">
         <div class="page-title-main">
@@ -39,13 +39,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":130,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":130,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"130","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"130","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -77,7 +77,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/130\/","data":{"product":"130","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/130\/","data":{"product":"130","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -117,13 +117,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":129,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":129,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"129","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"129","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -155,7 +155,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/129\/","data":{"product":"129","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/129\/","data":{"product":"129","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -195,13 +195,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":128,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":128,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"128","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"128","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -233,7 +233,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/128\/","data":{"product":"128","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/128\/","data":{"product":"128","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -273,13 +273,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":127,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":127,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"127","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"127","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -311,7 +311,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/127\/","data":{"product":"127","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/127\/","data":{"product":"127","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -351,13 +351,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":126,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":126,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"126","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"126","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -389,7 +389,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/126\/","data":{"product":"126","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/126\/","data":{"product":"126","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -429,13 +429,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":125,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":125,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"125","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"125","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -467,7 +467,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/125\/","data":{"product":"125","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/125\/","data":{"product":"125","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -507,13 +507,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":124,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":124,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"124","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"124","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -545,7 +545,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/124\/","data":{"product":"124","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/124\/","data":{"product":"124","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -585,13 +585,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":123,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":123,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"123","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"123","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -623,7 +623,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/123\/","data":{"product":"123","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/123\/","data":{"product":"123","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -663,13 +663,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":122,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":122,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"122","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"122","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -701,7 +701,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/122\/","data":{"product":"122","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/122\/","data":{"product":"122","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>
@@ -741,13 +741,13 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                                                                     <div class="product actions product-item-actions">
                                                 <div class="actions-secondary" data-role="add-to-links">
                                                                                                             <a href="#"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":121,"uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/wishlist\/index\/add\/","data":{"product":121,"uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            class="action towishlist" data-action="add-to-wishlist"
                                                            title="Thêm vào danh sách yêu thích">
                                                             <span>Thêm vào danh sách yêu thích</span>
                                                         </a>
                                                                                                                                                                                                                         <a href="#" class="action tocompare"
-                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"121","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                           data-post='{"action":"http:\/\/localhost\/index.php\/catalog\/product_compare\/add\/","data":{"product":"121","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                            title="Thêm vào so sánh">
                                                             <span>Thêm vào so sánh</span>
                                                         </a>
@@ -779,7 +779,7 @@ for (var i = 0; i < prodImageContainersWrappers.length; i++) {
                                             <div class="product-item-actions">
                                                                                                     <div class="actions-primary">
                                                                                                                                                                                                                                                     <button class="action tocart primary"
-                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC8%2C\/product\/121\/","data":{"product":"121","uenc":"aHR0cDovL2xvY2FsaG9zdC8,"}}'
+                                                                        data-post='{"action":"http:\/\/localhost\/index.php\/checkout\/cart\/add\/uenc\/aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv\/product\/121\/","data":{"product":"121","uenc":"aHR0cDovL2xvY2FsaG9zdC9pbmRleC5waHAv"}}'
                                                                         type="button" title="Thêm vào giỏ hàng">
                                                                     <span>Thêm vào giỏ hàng</span>
                                                                 </button>

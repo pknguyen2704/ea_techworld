@@ -22,6 +22,77 @@ require.config(config);
  */
 
 var config = {
+    map: {
+        '*': {
+            'rowBuilder':             'Magento_Theme/js/row-builder',
+            'toggleAdvanced':         'mage/toggle',
+            'translateInline':        'mage/translate-inline',
+            'sticky':                 'mage/sticky',
+            'tabs':                   'mage/tabs',
+            'collapsible':            'mage/collapsible',
+            'dropdownDialog':         'mage/dropdown',
+            'dropdown':               'mage/dropdowns',
+            'accordion':              'mage/accordion',
+            'loader':                 'mage/loader',
+            'tooltip':                'mage/tooltip',
+            'deletableItem':          'mage/deletable-item',
+            'itemTable':              'mage/item-table',
+            'fieldsetControls':       'mage/fieldset-controls',
+            'fieldsetResetControl':   'mage/fieldset-controls',
+            'redirectUrl':            'mage/redirect-url',
+            'loaderAjax':             'mage/loader',
+            'menu':                   'mage/menu',
+            'popupWindow':            'mage/popup-window',
+            'validation':             'mage/validation/validation',
+            'breadcrumbs':            'Magento_Theme/js/view/breadcrumbs',
+            'jquery/ui':              'jquery/compat',
+            'cookieStatus':           'Magento_Theme/js/cookie-status'
+        }
+    },
+    deps: [
+        'mage/common',
+        'mage/dataPost',
+        'mage/bootstrap'
+    ],
+    config: {
+        mixins: {
+            'Magento_Theme/js/view/breadcrumbs': {
+                'Magento_Theme/js/view/add-home-breadcrumb': true
+            }
+        }
+    }
+};
+
+/* eslint-disable max-depth */
+/**
+ * Adds polyfills only for browser contexts which prevents bundlers from including them.
+ */
+if (typeof window !== 'undefined' && window.document) {
+    /**
+     * Polyfill localStorage and sessionStorage for browsers that do not support them.
+     */
+    try {
+        if (!window.localStorage || !window.sessionStorage) {
+            throw new Error();
+        }
+
+        localStorage.setItem('storage_test', 1);
+        localStorage.removeItem('storage_test');
+    } catch (e) {
+        config.deps.push('mage/polyfill');
+    }
+}
+/* eslint-enable max-depth */
+
+require.config(config);
+})();
+(function() {
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+var config = {
     waitSeconds: 0,
     map: {
         '*': {
@@ -111,77 +182,6 @@ require(['jquery'], function ($) {
 
     $.noConflict();
 });
-
-require.config(config);
-})();
-(function() {
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-var config = {
-    map: {
-        '*': {
-            'rowBuilder':             'Magento_Theme/js/row-builder',
-            'toggleAdvanced':         'mage/toggle',
-            'translateInline':        'mage/translate-inline',
-            'sticky':                 'mage/sticky',
-            'tabs':                   'mage/tabs',
-            'collapsible':            'mage/collapsible',
-            'dropdownDialog':         'mage/dropdown',
-            'dropdown':               'mage/dropdowns',
-            'accordion':              'mage/accordion',
-            'loader':                 'mage/loader',
-            'tooltip':                'mage/tooltip',
-            'deletableItem':          'mage/deletable-item',
-            'itemTable':              'mage/item-table',
-            'fieldsetControls':       'mage/fieldset-controls',
-            'fieldsetResetControl':   'mage/fieldset-controls',
-            'redirectUrl':            'mage/redirect-url',
-            'loaderAjax':             'mage/loader',
-            'menu':                   'mage/menu',
-            'popupWindow':            'mage/popup-window',
-            'validation':             'mage/validation/validation',
-            'breadcrumbs':            'Magento_Theme/js/view/breadcrumbs',
-            'jquery/ui':              'jquery/compat',
-            'cookieStatus':           'Magento_Theme/js/cookie-status'
-        }
-    },
-    deps: [
-        'mage/common',
-        'mage/dataPost',
-        'mage/bootstrap'
-    ],
-    config: {
-        mixins: {
-            'Magento_Theme/js/view/breadcrumbs': {
-                'Magento_Theme/js/view/add-home-breadcrumb': true
-            }
-        }
-    }
-};
-
-/* eslint-disable max-depth */
-/**
- * Adds polyfills only for browser contexts which prevents bundlers from including them.
- */
-if (typeof window !== 'undefined' && window.document) {
-    /**
-     * Polyfill localStorage and sessionStorage for browsers that do not support them.
-     */
-    try {
-        if (!window.localStorage || !window.sessionStorage) {
-            throw new Error();
-        }
-
-        localStorage.setItem('storage_test', 1);
-        localStorage.removeItem('storage_test');
-    } catch (e) {
-        config.deps.push('mage/polyfill');
-    }
-}
-/* eslint-enable max-depth */
 
 require.config(config);
 })();
@@ -746,8 +746,9 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            transparent: 'Magento_Payment/js/transparent',
-            'Magento_Payment/transparent': 'Magento_Payment/js/transparent'
+            orderReview: 'Magento_Paypal/js/order-review',
+            'Magento_Paypal/order-review': 'Magento_Paypal/js/order-review',
+            paypalCheckout: 'Magento_Paypal/js/paypal-checkout'
         }
     }
 };
@@ -763,9 +764,8 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            orderReview: 'Magento_Paypal/js/order-review',
-            'Magento_Paypal/order-review': 'Magento_Paypal/js/order-review',
-            paypalCheckout: 'Magento_Paypal/js/paypal-checkout'
+            transparent: 'Magento_Payment/js/transparent',
+            'Magento_Payment/transparent': 'Magento_Payment/js/transparent'
         }
     }
 };
@@ -923,12 +923,11 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            mageTranslationDictionary: 'Magento_Translation/js/mage-translation-dictionary'
+            editTrigger: 'mage/edit-trigger',
+            addClass: 'Magento_Translation/js/add-class',
+            'Magento_Translation/add-class': 'Magento_Translation/js/add-class'
         }
-    },
-    deps: [
-        'mageTranslationDictionary'
-    ]
+    }
 };
 
 require.config(config);
@@ -942,11 +941,12 @@ require.config(config);
 var config = {
     map: {
         '*': {
-            editTrigger: 'mage/edit-trigger',
-            addClass: 'Magento_Translation/js/add-class',
-            'Magento_Translation/add-class': 'Magento_Translation/js/add-class'
+            mageTranslationDictionary: 'Magento_Translation/js/mage-translation-dictionary'
         }
-    }
+    },
+    deps: [
+        'mageTranslationDictionary'
+    ]
 };
 
 require.config(config);
