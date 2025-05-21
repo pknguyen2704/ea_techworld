@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: php-fpm
-        image: IMAGE_MAGENTO
+        image: gcr.io/enterprise-452702/techworld-magento:latest
         ports:
         - containerPort: 9000
         volumeMounts:
